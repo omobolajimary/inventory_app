@@ -23,6 +23,8 @@ return mysql_real_escape_string($str);
 //Sanitize the POST values
 $username = clean($_POST['username']);
 $password = clean($_POST['password']);
+$username = clean($_POST['regusername']);
+$password = clean($_POST['regpassword']);
  
 //Input Validations
 if($username == '') {
@@ -43,8 +45,9 @@ exit();
 }
  
 //Create query
-$qry="SELECT * FROM user WHERE username='$username' AND password='".md5($_POST['password'])."'";
-$result=mysql_query($qry);
+$qry1="SELECT * FROM user WHERE username='$username' AND password='".md5($_POST['password'])."'";
+$qry2="SELECT * FROM user WHERE username='$regusername' AND password='".md5($_POST['regpassword'])."'";
+$result=mysql_query($qry1 or $qry2);
  
 //Check whether the query was successful or not
 if($result) {

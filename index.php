@@ -65,12 +65,14 @@ echo '</ul>';
 			<form id="login" method="post" action="login.php">
 
 				<a href="#" id="flipToRecover" class="flipLink">Forgot?</a>
+				
+				<input type="checkbox" value="1" name="admin" > Remember Me </input>
 
 				<input type="text" name="username" id="loginEmail" placeholder="Username" />
 
 				<input type="password" name="password" id="loginPass" placeholder="Password" />
 
-                <input type="checkbox" value="1" name="admin" />
+                
 
 				<input type="submit" name="submit" value="Login" />
 
